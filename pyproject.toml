@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "blincawave"
+version = "0.1.0"
+description = "BLINCAwave — Boundary Layer Interacting with Capping Inversion and Atmospheric Wave Dynamics"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Hossein A. Kafiabad"}]
+dependencies = ["numpy", "scipy", "matplotlib", "xarray"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/blincawave"]
