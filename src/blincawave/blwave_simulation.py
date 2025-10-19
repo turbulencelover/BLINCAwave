@@ -5,9 +5,9 @@ from scipy.fft import irfft, rfftfreq
 from scipy.linalg import solve_banded
 from scipy.integrate import cumulative_trapezoid
 
-from U_background import BackgroundBase
-from farm_turbine_forcing import ForcingBase, NonlinearForcing
-from nonlinearities import nonlinear_terms
+from .vel_base import BackgroundBase
+from .forcing import ForcingBase, NonlinearForcing
+from .nonlinear import nonlinear_terms
 
 
 # ----------------- helper for one-sided BCs -----------------

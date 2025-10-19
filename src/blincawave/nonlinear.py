@@ -3,7 +3,7 @@ from scipy.fft import rfft, irfft
 # from scipy.linalg import solve_banded
 # from scipy.integrate import cumulative_trapezoid
 # from dataclasses import dataclass
-from zdiff import diff1_z_k, diff2_z_k, diff3_z_k, dealias_mask_rfft
+from .zdiff import diff1_z_k, diff2_z_k, diff3_z_k, dealias_mask_rfft
 
 
 def nonlinear_terms(wk, dz, k_vec, dealias=True):

@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import ticker
 from typing import Sequence, List, Tuple, Optional, Union, Literal
-from farm_turbine_forcing import BoxFarmGeom
+from .forcing import BoxFarmGeom
 
 
 

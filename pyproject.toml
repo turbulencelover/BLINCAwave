@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.26"]
 build-backend = "hatchling.build"
 
 [project]
@@ -10,7 +10,46 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Hossein A. Kafiabad, Majid Bastankhah"}]
-dependencies = ["numpy", "scipy", "matplotlib", "xarray"]
+
+# Core runtime dependencies inferred from your imports
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.11",       # for scipy.fft, integrate.cumulative_trapezoid, linalg.solve_banded
+  "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+docs = [
+  "mkdocs>=1.6",
+  "mkdocs-material>=9.5",
+  "mkdocstrings>=0.25",
+  "mkdocstrings-python>=1.10",
+  "mkdocs-jupyter>=0.24",
+  "pymdown-extensions>=10.8",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+  "black>=24.8",
+  "isort>=5.13",
+  "pre-commit>=3.7",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/blincawave"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+
+# Optional CLI: enables a `blincawave` command if main_run.py exposes main()
+# [project.scripts]
+# blincawave = "blincawave.main_run:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
