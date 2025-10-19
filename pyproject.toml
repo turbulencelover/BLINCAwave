@@ -9,7 +9,7 @@ description = "BLINCAwave — Boundary Layer Interacting with Capping Inversion 
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [{name = "Hossein A. Kafiabad"}]
+authors = [{name = "Hossein A. Kafiabad, Majid Bastankhah"}]
 dependencies = ["numpy", "scipy", "matplotlib", "xarray"]
 
 [tool.hatch.build.targets.wheel]
