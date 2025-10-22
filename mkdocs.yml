@@ -1,0 +1,55 @@
+
+site_name: BLINCAwave
+site_description: "Boundary Layer Interacting with Capping Inversion and Atmospheric Waves"
+repo_url: https://github.com/turbulencelover/BLINCAwave
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    primary: indigo
+    accent: cyan
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Theory:
+      - Overview: theory/overview.md
+      - Governing Equations: theory/equations.md
+      - Numerical Methods: theory/numerics.md
+  - Examples:
+      - Wave-forced boundary layer: examples/01_wave_forced_bl.md
+      - Capping inversion and gravity waves: examples/02_capping_inversion.md
+      - Energy & Momentum Budgets: examples/03_energy_budgets.md
+  - API Reference:
+      - Overview: api/index.md
+      - Core Simulation: api/blwave_simulation.md
+      - Main Run Script: api/main_run.md
+      - Forcing Models: api/forcing.md
+      - Background Profiles: api/vel_base.md
+      - Nonlinear Terms: api/nonlinear.md
+      - Plotting Tools: api/plotting.md
+      - Vertical Derivatives: api/zdiff.md
+  - Contributing: contributing.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]    # tell mkdocstrings where your package lives
+  - mkdocs-jupyter
+  - autorefs
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes

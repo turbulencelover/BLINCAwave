@@ -1,0 +1,56 @@
+Getting Started with BLINCAwave
+=================================
+
+Follow these steps to set up and run BLINCAwave on your computer.
+
+1. Clone the repository
+-----------------------
+    git clone https://github.com/turbulencelover/BLINCAwave.git
+    cd BLINCAwave
+
+2. Create and activate a Python virtual environment
+---------------------------------------------------
+
+macOS / Linux:
+    python3 -m venv .venv
+    source .venv/bin/activate
+
+Windows (PowerShell):
+    python -m venv .venv
+    .\.venv\Scripts\activate
+
+You should now see `(.venv)` at the start of your terminal prompt.
+
+3. Install BLINCAwave and dependencies
+--------------------------------------
+With the environment active:
+    pip install -e .
+
+If you plan to use Spyder:
+    pip install "spyder-kernels>=3.0,<3.1"
+(Spyder 6.x → kernels 3.x; Spyder 5.x → kernels 2.x)
+
+4. Verify the installation
+--------------------------
+Still inside the environment:
+    python -c "import blincawave, sys; print(blincawave.__file__); print(sys.executable)"
+
+You should see something like:
+    .../BLINCAwave/src/blincawave/__init__.py
+    .../BLINCAwave/.venv/bin/python
+
+5. (Optional) Using Spyder
+--------------------------
+1. Open Spyder → Tools → Preferences → Python Interpreter
+2. Choose “Use the following Python interpreter”
+3. Browse to:
+   - macOS/Linux → .../BLINCAwave/.venv/bin/python
+   - Windows → .../BLINCAwave/.venv/Scripts/python.exe
+4. Apply → OK → restart the IPython console.
+   Then run:
+       import blincawave
+       print(blincawave.__file__)
+
+6. Run an example
+-----------------
+    python tests/NonlinearEffects/example_run.py
